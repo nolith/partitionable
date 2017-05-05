@@ -1,0 +1,24 @@
+services:
+  - postgres:9.4
+variables:
+  POSTGRES_PASSWORD: "automateAlltheThings"
+  POSTGRES_USER: "test"
+  POSTGRES_DB: "test"
+  DATABASE_URL: postgres://test:automateAlltheThings@postgres/test
+  SECRET_KEY_BASE: gitlabCItests
+
+before_script:
+  - cd test/dummy
+  - bundle install
+  - bin/rails db:setup
+  - cd ../..
+
+test_2.2:
+  stage: test
+  variables:
+    LC_ALL: C.UTF-8
+    RAILS_ENV: test
+  image: ruby:2.2
+  script:
+    - bundle install
+    - bundle exec bin/test
