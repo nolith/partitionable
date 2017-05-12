@@ -10,7 +10,7 @@ variables:
 before_script:
   - cd test/dummy
   - bundle install
-  - bin/rails db:setup
+  - bin/rails db:setup || bin/rake db:setup
   - cd ../..
 
 test_2.2:
