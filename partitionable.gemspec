@@ -1,3 +1,4 @@
+# coding: utf-8
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
@@ -15,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.0.0", ">= 5.0.0.1"
+  s.add_dependency "rails", "~> 4.2.0"
 
   s.add_development_dependency "pg"
 end

@@ -127,7 +127,7 @@ module Partitionable
         end
 
         def partition_exists?(month, year)
-          ActiveRecord::Base.connection.data_source_exists? partition_name(month, year)
+          ActiveRecord::Base.connection.table_exists? partition_name(month, year)
         end
 
         def update_trigger
